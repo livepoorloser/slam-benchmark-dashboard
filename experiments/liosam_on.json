@@ -1,0 +1,59 @@
+{
+  "id": "liosam_on",
+  "name": "LIO-SAM ON",
+  "family": "LIO-SAM",
+  "loop_closure": "ON",
+  "status": "validated",
+  "resource_status": "quality-run",
+  "resource": {
+    "cpu_avg_pct": 108.37,
+    "cpu_p95_pct": 139.74,
+    "cpu_max_pct": 163.80,
+    "ram_avg_mb": 357.60,
+    "ram_p95_mb": null,
+    "ram_peak_mb": 416.41
+  },
+  "trajectory": {
+    "duration_s": 302.999,
+    "length_m": 116.454,
+    "start_end_m": 0.056,
+    "jumps": 0,
+    "samples": null
+  },
+  "map": {
+    "voxel_size_cm": 5,
+    "points": 658662
+  },
+  "geometry": {
+    "radius_cm": 20,
+    "plane_rmse_median_cm": 2.857,
+    "plane_rmse_p95_cm": 5.684,
+    "surface_variation": 0.0452,
+    "planarity": 0.681,
+    "planar_fraction_pct": 70.31
+  },
+  "revisit": {
+    "region_a": {
+      "median_cm": 2.60,
+      "p95_cm": 9.63,
+      "overlap_10cm_pct": 95.10
+    },
+    "region_b": {
+      "median_cm": 3.00,
+      "p95_cm": 11.15,
+      "overlap_10cm_pct": 94.33
+    }
+  },
+  "loop": {
+    "accepted_constraints": 246,
+    "fitness_median": 0.01662,
+    "fitness_p95": 0.09568,
+    "fitness_max": 0.23665,
+    "fitness_threshold": 0.30,
+    "note": "246 accepted constraints are time-separated spatial overlap constraints, not 246 unique places."
+  },
+  "media": {
+    "video": "media/liosam_on.mp4"
+  },
+  "notes": "Loop closure enabled. Resource values are from the quality run, not a dedicated formal resource run."
+}

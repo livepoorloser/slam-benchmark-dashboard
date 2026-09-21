@@ -1,0 +1,52 @@
+{
+  "id": "fastlio2",
+  "name": "FAST-LIO2",
+  "family": "FAST-LIO2",
+  "loop_closure": "None",
+  "status": "validated",
+  "resource_status": "formal",
+  "resource": {
+    "cpu_avg_pct": 28.19,
+    "cpu_p95_pct": 34.36,
+    "cpu_max_pct": 47.80,
+    "ram_avg_mb": 204.40,
+    "ram_p95_mb": 207.32,
+    "ram_peak_mb": 207.32
+  },
+  "trajectory": {
+    "duration_s": 303.10,
+    "length_m": 117.71,
+    "start_end_m": 0.120,
+    "jumps": 0,
+    "samples": 3032
+  },
+  "map": {
+    "voxel_size_cm": 5,
+    "points": 265658
+  },
+  "geometry": {
+    "radius_cm": 20,
+    "plane_rmse_median_cm": 2.753,
+    "plane_rmse_p95_cm": 5.494,
+    "surface_variation": 0.0430,
+    "planarity": 0.591,
+    "planar_fraction_pct": 63.00
+  },
+  "revisit": {
+    "region_a": {
+      "median_cm": 3.53,
+      "p95_cm": 10.94,
+      "overlap_10cm_pct": 93.70
+    },
+    "region_b": {
+      "median_cm": 3.75,
+      "p95_cm": 14.67,
+      "overlap_10cm_pct": 91.17
+    }
+  },
+  "loop": null,
+  "media": {
+    "video": "media/fastlio2.mp4"
+  },
+  "notes": "Current lightweight deployment baseline. Resource run is dedicated/formal."
+}

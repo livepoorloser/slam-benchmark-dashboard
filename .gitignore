@@ -1,0 +1,29 @@
+# Large/raw SLAM data
+*.bag
+*.db3
+*.mcap
+*.pcd
+*.ply
+*.mkv
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+
+# ROS build data
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor/system
+.vscode/
+.idea/
+.DS_Store
+
+# Website videos - upload separately
+media/*.mp4

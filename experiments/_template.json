@@ -1,0 +1,52 @@
+{
+  "id": "new_method_id",
+  "name": "New SLAM Method",
+  "family": "Method family",
+  "loop_closure": "ON/OFF/None",
+  "status": "pending",
+  "resource_status": "pending",
+  "resource": {
+    "cpu_avg_pct": null,
+    "cpu_p95_pct": null,
+    "cpu_max_pct": null,
+    "ram_avg_mb": null,
+    "ram_p95_mb": null,
+    "ram_peak_mb": null
+  },
+  "trajectory": {
+    "duration_s": null,
+    "length_m": null,
+    "start_end_m": null,
+    "jumps": null,
+    "samples": null
+  },
+  "map": {
+    "voxel_size_cm": 5,
+    "points": null
+  },
+  "geometry": {
+    "radius_cm": 20,
+    "plane_rmse_median_cm": null,
+    "plane_rmse_p95_cm": null,
+    "surface_variation": null,
+    "planarity": null,
+    "planar_fraction_pct": null
+  },
+  "revisit": {
+    "region_a": {
+      "median_cm": null,
+      "p95_cm": null,
+      "overlap_10cm_pct": null
+    },
+    "region_b": {
+      "median_cm": null,
+      "p95_cm": null,
+      "overlap_10cm_pct": null
+    }
+  },
+  "loop": null,
+  "media": {
+    "video": "media/new_method.mp4"
+  },
+  "notes": "Add experiment notes here."
+}

@@ -1,0 +1,52 @@
+{
+  "id": "liosam_off",
+  "name": "LIO-SAM OFF",
+  "family": "LIO-SAM",
+  "loop_closure": "OFF",
+  "status": "validated",
+  "resource_status": "formal",
+  "resource": {
+    "cpu_avg_pct": 100.52,
+    "cpu_p95_pct": 127.50,
+    "cpu_max_pct": 179.20,
+    "ram_avg_mb": 334.49,
+    "ram_p95_mb": 391.50,
+    "ram_peak_mb": 396.26
+  },
+  "trajectory": {
+    "duration_s": null,
+    "length_m": 116.232,
+    "start_end_m": 0.047,
+    "jumps": 0,
+    "samples": null
+  },
+  "map": {
+    "voxel_size_cm": 5,
+    "points": 649193
+  },
+  "geometry": {
+    "radius_cm": 20,
+    "plane_rmse_median_cm": 2.836,
+    "plane_rmse_p95_cm": 5.663,
+    "surface_variation": 0.0448,
+    "planarity": 0.679,
+    "planar_fraction_pct": 70.03
+  },
+  "revisit": {
+    "region_a": {
+      "median_cm": 2.97,
+      "p95_cm": 34.21,
+      "overlap_10cm_pct": 91.74
+    },
+    "region_b": {
+      "median_cm": 2.60,
+      "p95_cm": 11.28,
+      "overlap_10cm_pct": 94.35
+    }
+  },
+  "loop": null,
+  "media": {
+    "video": "media/liosam_off.mp4"
+  },
+  "notes": "Loop closure disabled. Resource run is dedicated/formal."
+}

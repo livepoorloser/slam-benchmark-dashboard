@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "project": {
+    "project": "B2 Quadruped SLAM Benchmark",
+    "dataset": {
+      "name": "office_hq_ros2",
+      "duration_s": 303.44174328,
+      "lidar_topic": "/livox/lidar",
+      "imu_topic": "/livox/imu",
+      "lidar_messages": 3035,
+      "imu_messages": 60688,
+      "lidar_sensor": "Livox MID360",
+      "notes": "Same bag, same machine, rate=1.0. No ground truth; revisit C2C is consistency, not absolute accuracy."
+    },
+    "deployment_target": "B2 quadruped robot"
+  },
+  "experiments": [
+    {
+      "id": "fastlio2",
+      "name": "FAST-LIO2",
+      "family": "FAST-LIO2",
+      "loop_closure": "None",
+      "status": "validated",
+      "resource_status": "formal",
+      "resource": {
+        "cpu_avg_pct": 28.19,
+        "cpu_p95_pct": 34.36,
+        "cpu_max_pct": 47.8,
+        "ram_avg_mb": 204.4,
+        "ram_p95_mb": 207.32,
+        "ram_peak_mb": 207.32
+      },
+      "trajectory": {
+        "duration_s": 303.1,
+        "length_m": 117.71,
+        "start_end_m": 0.12,
+        "jumps": 0,
+        "samples": 3032
+      },
+      "map": {
+        "voxel_size_cm": 5,
+        "points": 265658
+      },
+      "geometry": {
+        "radius_cm": 20,
+        "plane_rmse_median_cm": 2.753,
+        "plane_rmse_p95_cm": 5.494,
+        "surface_variation": 0.043,
+        "planarity": 0.591,
+        "planar_fraction_pct": 63.0
+      },
+      "revisit": {
+        "region_a": {
+          "median_cm": 3.53,
+          "p95_cm": 10.94,
+          "overlap_10cm_pct": 93.7
+        },
+        "region_b": {
+          "median_cm": 3.75,
+          "p95_cm": 14.67,
+          "overlap_10cm_pct": 91.17
+        }
+      },
+      "loop": null,
+      "media": {
+        "video": "media/fastlio2.mp4"
+      },
+      "notes": "Current lightweight deployment baseline. Resource run is dedicated/formal."
+    },
+    {
+      "id": "liosam_off",
+      "name": "LIO-SAM OFF",
+      "family": "LIO-SAM",
+      "loop_closure": "OFF",
+      "status": "validated",
+      "resource_status": "formal",
+      "resource": {
+        "cpu_avg_pct": 100.52,
+        "cpu_p95_pct": 127.5,
+        "cpu_max_pct": 179.2,
+        "ram_avg_mb": 334.49,
+        "ram_p95_mb": 391.5,
+        "ram_peak_mb": 396.26
+      },
+      "trajectory": {
+        "duration_s": null,
+        "length_m": 116.232,
+        "start_end_m": 0.047,
+        "jumps": 0,
+        "samples": null
+      },
+      "map": {
+        "voxel_size_cm": 5,
+        "points": 649193
+      },
+      "geometry": {
+        "radius_cm": 20,
+        "plane_rmse_median_cm": 2.836,
+        "plane_rmse_p95_cm": 5.663,
+        "surface_variation": 0.0448,
+        "planarity": 0.679,
+        "planar_fraction_pct": 70.03
+      },
+      "revisit": {
+        "region_a": {
+          "median_cm": 2.97,
+          "p95_cm": 34.21,
+          "overlap_10cm_pct": 91.74
+        },
+        "region_b": {
+          "median_cm": 2.6,
+          "p95_cm": 11.28,
+          "overlap_10cm_pct": 94.35
+        }
+      },
+      "loop": null,
+      "media": {
+        "video": "media/liosam_off.mp4"
+      },
+      "notes": "Loop closure disabled. Resource run is dedicated/formal."
+    },
+    {
+      "id": "liosam_on",
+      "name": "LIO-SAM ON",
+      "family": "LIO-SAM",
+      "loop_closure": "ON",
+      "status": "validated",
+      "resource_status": "quality-run",
+      "resource": {
+        "cpu_avg_pct": 108.37,
+        "cpu_p95_pct": 139.74,
+        "cpu_max_pct": 163.8,
+        "ram_avg_mb": 357.6,
+        "ram_p95_mb": null,
+        "ram_peak_mb": 416.41
+      },
+      "trajectory": {
+        "duration_s": 302.999,
+        "length_m": 116.454,
+        "start_end_m": 0.056,
+        "jumps": 0,
+        "samples": null
+      },
+      "map": {
+        "voxel_size_cm": 5,
+        "points": 658662
+      },
+      "geometry": {
+        "radius_cm": 20,
+        "plane_rmse_median_cm": 2.857,
+        "plane_rmse_p95_cm": 5.684,
+        "surface_variation": 0.0452,
+        "planarity": 0.681,
+        "planar_fraction_pct": 70.31
+      },
+      "revisit": {
+        "region_a": {
+          "median_cm": 2.6,
+          "p95_cm": 9.63,
+          "overlap_10cm_pct": 95.1
+        },
+        "region_b": {
+          "median_cm": 3.0,
+          "p95_cm": 11.15,
+          "overlap_10cm_pct": 94.33
+        }
+      },
+      "loop": {
+        "accepted_constraints": 246,
+        "fitness_median": 0.01662,
+        "fitness_p95": 0.09568,
+        "fitness_max": 0.23665,
+        "fitness_threshold": 0.3,
+        "note": "246 accepted constraints are time-separated spatial overlap constraints, not 246 unique places."
+      },
+      "media": {
+        "video": "media/liosam_on.mp4"
+      },
+      "notes": "Loop closure enabled. Resource values are from the quality run, not a dedicated formal resource run."
+    }
+  ]
+}

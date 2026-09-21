@@ -1,0 +1,14 @@
+{
+  "project": "B2 Quadruped SLAM Benchmark",
+  "dataset": {
+    "name": "office_hq_ros2",
+    "duration_s": 303.44174328,
+    "lidar_topic": "/livox/lidar",
+    "imu_topic": "/livox/imu",
+    "lidar_messages": 3035,
+    "imu_messages": 60688,
+    "lidar_sensor": "Livox MID360",
+    "notes": "Same bag, same machine, rate=1.0. No ground truth; revisit C2C is consistency, not absolute accuracy."
+  },
+  "deployment_target": "B2 quadruped robot"
+}
