@@ -26,4 +26,3 @@ __pycache__/
 .DS_Store
 
 # Website videos - upload separately
-media/*.mp4
