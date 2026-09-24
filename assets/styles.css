@@ -323,3 +323,253 @@ code { color: #a9d6ff; background: #0b1118; border: 1px solid #202a36; border-ra
   line-height: 1.85;
   letter-spacing: .005em;
 }
+
+
+/* === Light / Dark theme switch === */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f4f6f8;
+  --panel: #ffffff;
+  --panel-2: #f7f9fc;
+
+  --text: #17202a;
+  --muted: #5f6b78;
+  --border: #d9e0e8;
+
+  --accent: #1565c0;
+  --accent-2: #1f7a38;
+  --warn: #9a6700;
+  --danger: #c93636;
+}
+
+body,
+.panel,
+.summary-card,
+.algo-filter,
+.metric-select-label select,
+.bar-track,
+.revisit-card,
+.video-card,
+.guide-toolbar input,
+.guide-group,
+.guide-group > summary,
+.legend-card,
+.notice,
+code,
+th,
+td,
+.group-row td {
+  transition:
+    background-color .2s ease,
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.theme-toggle {
+  min-width: 118px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+  font-weight: 700;
+}
+
+.theme-icon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+
+/* 页面 */
+
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(
+      circle at top,
+      #edf4fb 0,
+      var(--bg) 38rem
+    );
+
+  color: var(--text);
+}
+
+
+/* 主面板 */
+
+:root[data-theme="light"] .panel {
+  background: rgba(255,255,255,.97);
+
+  box-shadow:
+    0 8px 24px
+    rgba(26,43,61,.05);
+}
+
+
+/* 算法卡片 */
+
+:root[data-theme="light"] .summary-card {
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f7f9fc
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(26,43,61,.05);
+}
+
+
+/* 各类次级卡片 */
+
+:root[data-theme="light"] .algo-filter,
+:root[data-theme="light"] .metric-select-label select,
+:root[data-theme="light"] .revisit-card,
+:root[data-theme="light"] .video-card,
+:root[data-theme="light"] .guide-toolbar input,
+:root[data-theme="light"] .guide-group,
+:root[data-theme="light"] .legend-card {
+  background: #f8fafc;
+}
+
+
+/* 展开项和表格分组 */
+
+:root[data-theme="light"] .guide-group > summary,
+:root[data-theme="light"] .group-row td {
+  background: #f1f5f9;
+}
+
+
+/* 图表 */
+
+:root[data-theme="light"] .bar-track {
+  background: #e8edf3;
+  border-color: #d8e0e8;
+}
+
+:root[data-theme="light"] .bar-fill {
+  background:
+    linear-gradient(
+      90deg,
+      #2f7fc4,
+      #5aa7e6
+    );
+}
+
+
+/* 实验说明 */
+
+:root[data-theme="light"] .notice {
+  color: #4e4329;
+  background: rgba(202,146,25,.10);
+}
+
+
+/* 深色主题中写死的文字颜色 */
+
+:root[data-theme="light"] .constraint-grid label,
+:root[data-theme="light"] .footer-panel ol,
+:root[data-theme="light"] .guide-item p,
+:root[data-theme="light"] .legend-card p {
+  color: #3f4b57;
+}
+
+:root[data-theme="light"] .guide-caution {
+  color: #7a5d1d !important;
+}
+
+
+/* Code */
+
+:root[data-theme="light"] code {
+  color: #0d5ea6;
+  background: #f1f5f9;
+  border-color: #d9e0e8;
+}
+
+
+/* 表格第一列 */
+
+:root[data-theme="light"] th:first-child,
+:root[data-theme="light"] td:first-child {
+  background: var(--panel);
+}
+
+
+/* Hover */
+
+:root[data-theme="light"] .btn:hover,
+:root[data-theme="light"] .text-btn:hover,
+:root[data-theme="light"] .metric-help-link:hover {
+  border-color: #9aa9b8;
+}
+
+
+/* Formal */
+
+:root[data-theme="light"] .badge.formal {
+  color: #286c36;
+  border-color: rgba(31,122,56,.28);
+  background: rgba(31,122,56,.08);
+}
+
+
+/* Quality run */
+
+:root[data-theme="light"] .badge.quality-run {
+  color: #825c00;
+  border-color: rgba(154,103,0,.28);
+  background: rgba(154,103,0,.08);
+}
+
+
+/* 指标方向 */
+
+:root[data-theme="light"] .direction-lower {
+  color: #0f5f9c;
+  background: rgba(21,101,192,.10);
+  border-color: rgba(21,101,192,.22);
+}
+
+:root[data-theme="light"] .direction-higher {
+  color: #2b6f37;
+  background: rgba(31,122,56,.10);
+  border-color: rgba(31,122,56,.22);
+}
+
+:root[data-theme="light"] .direction-target {
+  color: #805d0a;
+  background: rgba(154,103,0,.10);
+  border-color: rgba(154,103,0,.22);
+}
+
+:root[data-theme="light"] .direction-reference {
+  color: #55616d;
+  background: rgba(44,62,80,.05);
+  border-color: rgba(44,62,80,.14);
+}
+
+
+/* Video */
+
+:root[data-theme="light"] .video-card video {
+  background: #e9eef4;
+}
+
+
+/* 打印时隐藏主题按钮 */
+
+@media print {
+  .theme-toggle {
+    display: none !important;
+  }
+}
+

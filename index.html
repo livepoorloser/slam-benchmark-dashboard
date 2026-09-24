@@ -4,6 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>B2 SLAM Benchmark Dashboard</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('slam-dashboard-theme');
+        document.documentElement.dataset.theme =
+          saved === 'light' ? 'light' : 'dark';
+      } catch (_) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -15,6 +26,13 @@
         <p id="datasetSummary" class="hero-copy">正在读取实验数据…</p>
       </div>
       <div class="hero-actions">
+        <button id="themeToggle"
+                type="button"
+                class="btn theme-toggle"
+                aria-label="切换深色和浅色主题">
+          <span id="themeIcon" class="theme-icon">☀</span>
+          <span id="themeLabel">浅色模式</span>
+        </button>
         <button id="reloadBtn" type="button" class="btn">重新加载数据</button>
         <label class="btn btn-secondary file-btn">
           临时导入 JSON

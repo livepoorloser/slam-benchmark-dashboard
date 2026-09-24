@@ -1,6 +1,46 @@
 (() => {
   'use strict';
 
+  function syncThemeButton() {
+    const button = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    const label = document.getElementById('themeLabel');
+
+    if (!button || !icon || !label) return;
+
+    const current =
+      document.documentElement.dataset.theme || 'dark';
+
+    if (current === 'light') {
+      icon.textContent = '☾';
+      label.textContent = '深色模式';
+      button.title = '切换到深色模式';
+      button.setAttribute('aria-pressed', 'true');
+    } else {
+      icon.textContent = '☀';
+      label.textContent = '浅色模式';
+      button.title = '切换到浅色模式';
+      button.setAttribute('aria-pressed', 'false');
+    }
+  }
+
+  function toggleTheme() {
+    const current =
+      document.documentElement.dataset.theme || 'dark';
+
+    const next =
+      current === 'light' ? 'dark' : 'light';
+
+    document.documentElement.dataset.theme = next;
+
+    try {
+      localStorage.setItem('slam-dashboard-theme', next);
+    } catch (_) {}
+
+    syncThemeButton();
+  }
+
+
   const state = { payload: null, selected: new Set(), metric: 'cpu_avg_pct' };
 
   const metricDefs = {
@@ -408,6 +448,13 @@
     console.error(err);
     el('datasetSummary').textContent = `读取失败：${err.message}. 请通过 ./serve.sh 启动网页，而不是直接双击 index.html。`;
   }
+
+  document.getElementById('themeToggle')?.addEventListener(
+    'click',
+    toggleTheme
+  );
+
+  syncThemeButton();
 
   updateMetricSelectLabels();
   loadDefault().catch(showError);
