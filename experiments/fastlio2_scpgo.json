@@ -5,16 +5,14 @@
   "loop_closure": "ON",
   "status": "investigating",
   "resource_status": "formal",
-
   "resource": {
     "cpu_avg_pct": 114.01,
     "cpu_p95_pct": 174.13,
-    "cpu_max_pct": 202.00,
+    "cpu_max_pct": 202.0,
     "ram_avg_mb": 404.67,
     "ram_p95_mb": 502.73,
     "ram_peak_mb": 512.78
   },
-
   "trajectory": {
     "duration_s": 303.001,
     "length_m": 114.172,
@@ -22,67 +20,60 @@
     "jumps": null,
     "samples": 600
   },
-
   "map": {
     "voxel_size_cm": 5,
-    "points": null
+    "points": 1127256
   },
-
   "geometry": {
     "radius_cm": 20,
-    "plane_rmse_median_cm": null,
-    "plane_rmse_p95_cm": null,
-    "surface_variation": null,
-    "planarity": null,
-    "planar_fraction_pct": null
+    "plane_rmse_median_cm": 5.349,
+    "plane_rmse_p95_cm": 7.88,
+    "surface_variation": 0.1475,
+    "planarity": 0.451,
+    "planar_fraction_pct": 42.83
   },
-
   "revisit": {
     "region_a": {
-      "median_cm": null,
-      "p95_cm": null,
-      "overlap_10cm_pct": null
+      "median_cm": 5.29,
+      "p95_cm": 21.13,
+      "overlap_10cm_pct": 79.42
     },
     "region_b": {
-      "median_cm": null,
-      "p95_cm": null,
-      "overlap_10cm_pct": null
+      "median_cm": 6.03,
+      "p95_cm": 29.6,
+      "overlap_10cm_pct": 71.86
     }
   },
-
   "loop": {
-    "accepted_constraints": null,
-    "fitness_median": null,
-    "fitness_p95": null,
-    "fitness_max": null,
-    "fitness_threshold": 0.30,
-
+    "accepted_constraints": 421,
+    "fitness_median": 0.06111,
+    "fitness_p95": 0.23878,
+    "fitness_max": 0.29999,
+    "fitness_threshold": 0.3,
     "raw_at_input_end": {
       "loop_detected": 2929,
       "icp_passed": 2108,
       "icp_failed": 820
     },
-
     "postbag_120s": {
       "loop_detected": 4113,
       "icp_passed": 3293,
       "icp_failed": 820
     },
-
     "postbag_stability": {
       "poses": 600,
       "start_end_0s_m": 1.016,
-      "start_end_120s_m": 1.080,
+      "start_end_120s_m": 1.08,
       "rms_shift_120s_m": 0.388,
       "max_shift_120s_m": 0.742
     },
-
-    "note": "SC-PGO uses Scan Context candidate detection, ICP verification and GTSAM/iSAM2 pose-graph optimization. Raw loop counts are not unique loop pairs. Post-bag testing shows that loop processing continues after input stops, with the same 600 optimized poses still changing."
+    "note": "At input end, 2108 raw ICP pass events corresponded to 421 unique accepted keyframe pairs; duplicate-pass ratio 80.0%. Raw loop events are not unique physical places. Post-bag testing separately confirmed backend backlog.",
+    "candidate_unique_pairs": 583,
+    "unique_failed_pairs": 166,
+    "duplicate_pass_ratio_pct": 80.03
   },
-
   "media": {
     "video": "media/fastlio2_scpgo.mp4"
   },
-
   "notes": "Formal resource benchmark completed. Post-bag stability testing confirmed backend backlog: after the input bag stopped, loop processing continued at approximately 10 Hz and the optimized pose graph continued to change. Unique loop-pair analysis, revisit metrics and map geometry metrics are still pending."
 }
