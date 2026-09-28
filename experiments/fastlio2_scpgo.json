@@ -1,0 +1,88 @@
+{
+  "id": "fastlio2_scpgo",
+  "name": "FAST-LIO2 + SC-PGO",
+  "family": "FAST-LIO2 + Scan Context PGO",
+  "loop_closure": "ON",
+  "status": "investigating",
+  "resource_status": "formal",
+
+  "resource": {
+    "cpu_avg_pct": 114.01,
+    "cpu_p95_pct": 174.13,
+    "cpu_max_pct": 202.00,
+    "ram_avg_mb": 404.67,
+    "ram_p95_mb": 502.73,
+    "ram_peak_mb": 512.78
+  },
+
+  "trajectory": {
+    "duration_s": 303.001,
+    "length_m": 114.172,
+    "start_end_m": 1.016,
+    "jumps": null,
+    "samples": 600
+  },
+
+  "map": {
+    "voxel_size_cm": 5,
+    "points": null
+  },
+
+  "geometry": {
+    "radius_cm": 20,
+    "plane_rmse_median_cm": null,
+    "plane_rmse_p95_cm": null,
+    "surface_variation": null,
+    "planarity": null,
+    "planar_fraction_pct": null
+  },
+
+  "revisit": {
+    "region_a": {
+      "median_cm": null,
+      "p95_cm": null,
+      "overlap_10cm_pct": null
+    },
+    "region_b": {
+      "median_cm": null,
+      "p95_cm": null,
+      "overlap_10cm_pct": null
+    }
+  },
+
+  "loop": {
+    "accepted_constraints": null,
+    "fitness_median": null,
+    "fitness_p95": null,
+    "fitness_max": null,
+    "fitness_threshold": 0.30,
+
+    "raw_at_input_end": {
+      "loop_detected": 2929,
+      "icp_passed": 2108,
+      "icp_failed": 820
+    },
+
+    "postbag_120s": {
+      "loop_detected": 4113,
+      "icp_passed": 3293,
+      "icp_failed": 820
+    },
+
+    "postbag_stability": {
+      "poses": 600,
+      "start_end_0s_m": 1.016,
+      "start_end_120s_m": 1.080,
+      "rms_shift_120s_m": 0.388,
+      "max_shift_120s_m": 0.742
+    },
+
+    "note": "SC-PGO uses Scan Context candidate detection, ICP verification and GTSAM/iSAM2 pose-graph optimization. Raw loop counts are not unique loop pairs. Post-bag testing shows that loop processing continues after input stops, with the same 600 optimized poses still changing."
+  },
+
+  "media": {
+    "video": "media/fastlio2_scpgo.mp4"
+  },
+
+  "notes": "Formal resource benchmark completed. Post-bag stability testing confirmed backend backlog: after the input bag stopped, loop processing continued at approximately 10 Hz and the optimized pose graph continued to change. Unique loop-pair analysis, revisit metrics and map geometry metrics are still pending."
+}
